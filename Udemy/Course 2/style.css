@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+}
+
+.wrapper{
+    position: relative;
+    height: 100vh;
+}
+
+header{
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
