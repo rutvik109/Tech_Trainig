@@ -1,0 +1,23 @@
+.container{
+    border: 1px solid black;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.item{
+   background-color: red;
+   margin: 12px;
+   width: 122px;
+   height: 122px;
+   border: 1px solid black; 
+}
+
+.iteam1{
+    flex-grow: 2;
+    /* flex-shrink: 2; */
+    /* align-self: center; */
+}
