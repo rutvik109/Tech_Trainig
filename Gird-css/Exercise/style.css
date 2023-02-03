@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    column-gap: 12px;
+    row-gap: 12px;
+    justify-items: end;
+    align-items: center;
+    background-color: red;
+    height: 100vh;
+}
+
+.item{
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+}
+
+.header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: black;
+}
+
+.footer{
+    grid-column: 1 / span 3;
+    background-color: black;  
+}
+
+.center{
+    justify-self: center;
+    align-self: start;
+}
+
+/* you can use place-items and place-self instead of using both justify and align */
