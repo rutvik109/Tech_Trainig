@@ -1,7 +1,7 @@
 let buttons = document.querySelectorAll(".button");
 let display = document.getElementById("display");
 
-
+// console.log(buttons);
 for(let x = 0;x < buttons.length;x++){
 
     buttons[x].addEventListener("click",(e) =>{
