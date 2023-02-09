@@ -5,6 +5,6 @@
 
 </div>
 
-<app-course-card  (click) = "appClicked()"  [course] = "coreCourse"></app-course-card>
-<app-course-card   (courseSelected) = "OnCourseSelected($event)"  [course] = "rxjsCourse"></app-course-card>
+<app-course-card  (SelectedCourse) = "OnParentSelected($event)"  [course] = "coreCourse"></app-course-card>
+<app-course-card  [course] = "rxjsCourse"></app-course-card>
 <app-course-card  [course] = "ngrxCourse"></app-course-card>

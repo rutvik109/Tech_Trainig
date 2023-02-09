@@ -11,14 +11,17 @@ export class CourseCardComponent {
   @Input()
   course !: Course;
 
+
   @Output()
-  courseSelected = new EventEmitter<Course>();
+  SelectedCourse = new EventEmitter();
 
 
-  cardClick (){
-    console.log("card button clicked");
-
-    this.courseSelected.emit(this.course);
+  OnSelectedCourse(){
+    this.SelectedCourse.emit(this.course);
   }
+
+
+  
+  
 
 }

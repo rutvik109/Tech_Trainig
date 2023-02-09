@@ -9,20 +9,12 @@ import {Course} from "./model/course"
 })
 export class AppComponent {
 
-
-OnCourseSelected(course: Course){
-  console.log("Custome CourseSelected",course);
-}
-
-
-appClicked(){
-  console.log("App button Clicked");
-}
-
-
 coreCourse = COURSES[0];
 rxjsCourse = COURSES[1];
 ngrxCourse = COURSES[2];
 
 
+OnParentSelected(course : Course){
+     console.log(course);
+}
 }
