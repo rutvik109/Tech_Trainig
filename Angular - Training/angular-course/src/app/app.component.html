@@ -1,0 +1,10 @@
+<div class="top-menu">
+
+    <img class="logo"
+         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+<app-course-card  (click) = "appClicked()"  [course] = "coreCourse"></app-course-card>
+<app-course-card   (courseSelected) = "OnCourseSelected($event)"  [course] = "rxjsCourse"></app-course-card>
+<app-course-card  [course] = "ngrxCourse"></app-course-card>
