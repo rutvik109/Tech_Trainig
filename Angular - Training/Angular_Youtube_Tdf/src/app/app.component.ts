@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular_Youtube_Tdf';
+
+  topics = ["Angular","React","NextJs"];
+
+  UserModel = new User("rutvik","rutvik11@gmail.com",12345678910,"Angular","morning",false);
 }
