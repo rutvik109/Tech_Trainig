@@ -11,5 +11,5 @@ export class AppComponent {
 
   topics = ["Angular","React","NextJs"];
 
-  UserModel = new User("rutvik","rutvik11@gmail.com",12345678910,"Angular","morning",false);
+  UserModel = new User("","rutvik11@gmail.com",12345678910,"Angular","morning",false);
 }
