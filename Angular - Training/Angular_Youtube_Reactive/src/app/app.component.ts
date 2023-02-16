@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 // import { FormGroup, FormControl } from '@angular/forms';
+// import { FormGroup } from '@angular/forms';
 import { FormBuilder , Validators } from '@angular/forms';
 import { forbiddenNameValidator } from './shared/user-name.validator';
 import { PasswordValidator } from './shared/password.validator';
@@ -12,13 +13,23 @@ import { PasswordValidator } from './shared/password.validator';
 export class AppComponent {
 
   constructor(private fb : FormBuilder){};
+ 
+  registrationForm : any;
+  
 
   get UserName(){
-    return this.registrationForm.controls.['userName'];
+    return this.registrationForm.controls['userName'];
   }
 
-   registrationForm = this.fb.group({
+  get Email(){
+    return this.registrationForm.controls['email'];
+  }
+
+  ngOnInit(){
+    this.registrationForm = this.fb.group({
       userName: ["", [Validators.required,Validators.minLength(3),forbiddenNameValidator(/admin/)]],
+      email: "",
+      subscribe: [false],
       password: [""],
       confirmPassword: [""],
       address: this.fb.group({
@@ -27,6 +38,20 @@ export class AppComponent {
         postCode: [""]
       })
    },{validator : PasswordValidator})
+
+   this.registrationForm.controls['subscribe'].valueChanges.subscribe((checkedValue : any) => {
+      const email = this.registrationForm.controls['email'];
+      if(checkedValue){
+        email.setValidators(Validators.required);
+      }
+      else{
+        email.clearValidators();
+      }
+      email.updateValueAndValidity();
+    });
+  }
+
+   
 
 //     registrationForm = new FormGroup(
 //       {
@@ -44,6 +69,8 @@ export class AppComponent {
     OnLoad(){
       this.registrationForm.setValue({
         userName: "rutvik",
+        email: "",
+        subscribe: [false],
         password: "test",
         confirmPassword: "test",
         address: {
