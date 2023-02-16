@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 // import { FormGroup, FormControl } from '@angular/forms';
 // import { FormGroup } from '@angular/forms';
-import { FormBuilder , Validators } from '@angular/forms';
+import { FormBuilder , Validators, FormArray} from '@angular/forms';
 import { forbiddenNameValidator } from './shared/user-name.validator';
 import { PasswordValidator } from './shared/password.validator';
 
@@ -24,6 +24,15 @@ export class AppComponent {
     return this.registrationForm.controls['email'];
   }
 
+  get alterEmails(){
+    return this.registrationForm.controls['alternateEmails']  ;
+  }
+
+  
+  addAlternateEmail() {
+    this.alterEmails.push(this.fb.control(''));
+  }
+
   ngOnInit(){
     this.registrationForm = this.fb.group({
       userName: ["", [Validators.required,Validators.minLength(3),forbiddenNameValidator(/admin/)]],
@@ -35,7 +44,8 @@ export class AppComponent {
         city: [""],
         state: [""],
         postCode: [""]
-      })
+      }),
+      alternateEmails: this.fb.array([])
    },{validator : PasswordValidator})
 
    this.registrationForm.controls['subscribe'].valueChanges.subscribe((checkedValue : any) => {

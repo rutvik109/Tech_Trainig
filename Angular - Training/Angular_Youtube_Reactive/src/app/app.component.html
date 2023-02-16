@@ -47,10 +47,13 @@
 
         <div class="form-group">
           <label>Email</label>
+          <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addAlternateEmail()">Add e-mail</button>
           <input type="email"  [class.is-invalid] = "Email.invalid && Email.touched"  formControlName="email" class="form-control">
           <small [class.d-none] = "Email.untouched || Email.valid" class="text-danger">Please Enter Email</small>
+          <div  formArrayName="alternateEmails" *ngFor = "let email of alterEmails.controls; let i = index" >
+            <input type="email" class="form-control" [formControlName] = "i">
+          </div>
         </div>
-  
         <div class="form-check">
           <label class="form-check-label">
             Send me promotional offers
