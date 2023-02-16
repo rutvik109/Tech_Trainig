@@ -16,7 +16,6 @@ export class AppComponent {
  
   registrationForm : any;
   
-
   get UserName(){
     return this.registrationForm.controls['userName'];
   }
