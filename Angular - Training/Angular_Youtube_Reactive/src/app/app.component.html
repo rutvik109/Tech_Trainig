@@ -9,7 +9,7 @@
   <body>
     <div class="container-fluid">
       <h2>Registration Form</h2>
-      <form [formGroup]="registrationForm">
+      <form [formGroup]="registrationForm" (ngSubmit)= "OnSubmit()">
         {{ registrationForm.value | json }}
 
         <div class="form-group">
@@ -100,7 +100,7 @@
           </div>
         </div>
 
-        <button class="btn btn-primary mb-3" type="submit">Register</button
+        <button  [disabled]="!registrationForm.valid"  class="btn btn-primary mb-3" type="submit">Register</button
         ><br />
         <button class="btn btn-info" type="button" (click)="OnLoad()">
           Load Api Data

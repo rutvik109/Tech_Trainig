@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { FormBuilder , Validators, FormArray} from '@angular/forms';
 import { forbiddenNameValidator } from './shared/user-name.validator';
 import { PasswordValidator } from './shared/password.validator';
+import { RegistrationService } from './registration.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import { PasswordValidator } from './shared/password.validator';
 })
 export class AppComponent {
 
-  constructor(private fb : FormBuilder){};
+  constructor(private fb : FormBuilder, private _registrationService: RegistrationService){};
  
   registrationForm : any;
   
@@ -90,4 +91,12 @@ export class AppComponent {
       }
     })
 }
+
+ OnSubmit(){
+     this._registrationService.register(this.registrationForm.value)
+     .subscribe(
+      response => console.log("Success!!", response),
+      error => console.log("Error!!" , error)
+     )
+ }
 }
