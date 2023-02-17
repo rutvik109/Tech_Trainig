@@ -1,0 +1,22 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "KFC restaurant",
+      "address": "noida sector 50",
+      "email": "kfc@test.com"
+    },
+    {
+      "id": 2,
+      "name": "Royal restaurant",
+      "address": "Ahmedabad",
+      "email": "royal@test.com"
+    },
+    {
+      "name": "Amrit",
+      "address": "Punjab",
+      "email": "amrit@test.com",
+      "id": 3
+    }
+  ]
+}
