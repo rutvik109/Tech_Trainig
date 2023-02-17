@@ -7,6 +7,7 @@ import { FormGroup , FormControl } from '@angular/forms';
   styleUrls: ['./update-restro.component.css']
 })
 export class UpdateRestroComponent {
+  
 
   updateRestro = new FormGroup({
     name : new FormControl(''),
