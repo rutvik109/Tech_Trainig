@@ -11,6 +11,8 @@ export class RestoService {
 
  _durl = "";
 
+ _uurl = "";
+
   constructor(private http : HttpClient) { }
 
   GetList(){
@@ -26,5 +28,10 @@ export class RestoService {
   DeleteRestro(id : any){
     this._durl = `${this._url}/${id}`;
     return this.http.delete<any>(this._durl);
+  }
+
+  fetchRestro(id : any){
+    this._uurl = `${this._url}/${id}`
+      return this.http.get<any>(this._uurl)
   }
 }
