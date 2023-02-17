@@ -7,22 +7,38 @@
 </ul> -->
 
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Address</th>
-        <th scope="col">Operations</th>
-      </tr>
-    </thead>
-    <tbody>
-            <tr *ngFor = "let item of restroList">
-                    <td>{{item["id"]}}</td>
-                    <td>{{item["name"]}}</td>
-                    <td>{{item["email"]}}</td>
-                    <td>{{item["address"]}}</td>
-                    <td><i  (click) = "Delete(item['id'])"  class="fa fa-trash" style="font-size: 25px;" aria-hidden="true"></i></td>
-            </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of restroList">
+      <td>{{ item["id"] }}</td>
+      <td>{{ item["name"] }}</td>
+      <td>{{ item["email"] }}</td>
+      <td>{{ item["address"] }}</td>
+      <td>
+        <a 
+          ><i
+            (click)="Delete(item['id'])"
+            class="fa fa-trash"
+            style="font-size: 25px;color: red;margin-right: 10px;"
+            aria-hidden="true"
+          ></i
+        ></a>
+        <a routerLink="/update/{{item['id']}}"
+          ><i
+            class="fa fa-edit"
+            style="font-size: 22px; color: blue;"
+            aria-hidden="true"
+          ></i
+        ></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

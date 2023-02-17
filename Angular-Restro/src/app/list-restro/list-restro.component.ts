@@ -22,4 +22,5 @@ export class ListRestroComponent {
     this.restroList.splice(id - 1,1);
     this._restoService.DeleteRestro(id).subscribe(data => console.log(data));
   }
+
 }
