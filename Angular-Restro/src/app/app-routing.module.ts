@@ -12,7 +12,7 @@ const routes: Routes = [
     component: AddRestroComponent
   },
   {
-    path: "list",
+    path: "",
     component: ListRestroComponent
   },
   {

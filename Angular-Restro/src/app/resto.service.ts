@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RestoService {
 
+  user_url = "http://localhost:3000/users"
 
   _url = "http://localhost:3000/restaurants";
 
@@ -40,5 +41,9 @@ export class RestoService {
   putRestro(id :  any,data : any){
     this._purl = `${this._url}/${id}`
       return this.http.put<any>(this._purl,data);
+  }
+
+  postUser(data : any){
+      return this.http.post<any>(this.user_url,data)
   }
 }
