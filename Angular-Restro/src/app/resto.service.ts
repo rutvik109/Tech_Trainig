@@ -13,6 +13,8 @@ export class RestoService {
 
  _uurl = "";
 
+ _purl = "";
+
   constructor(private http : HttpClient) { }
 
   GetList(){
@@ -33,5 +35,10 @@ export class RestoService {
   fetchRestro(id : any){
     this._uurl = `${this._url}/${id}`
       return this.http.get<any>(this._uurl)
+  }
+
+  putRestro(id :  any,data : any){
+    this._purl = `${this._url}/${id}`
+      return this.http.put<any>(this._purl,data);
   }
 }

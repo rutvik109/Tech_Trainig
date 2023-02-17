@@ -17,18 +17,37 @@ export class UpdateRestroComponent {
 
   public cid: any;
 
+  alert = false;
+
+  closeAlert(){
+    this.alert = false;
+  }
+
+  updateRestro = this.fb.group({
+    name: [""],
+    email: [""],
+    address: [""],
+  });
+
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
     this.cid = +id;
 
     this.restoService
       .fetchRestro(this.cid)
-      .subscribe((data) => console.log(data));
+      .subscribe((data) => {
+        this.updateRestro = this.fb.group({
+          name: [data.name],
+          email: [data.email],
+          address: [data.address],
+        });
+      });
   }
 
-  updateRestro = this.fb.group({
-    name: [''],
-    email: [''],
-    address: [''],
-  });
+  editRestro(){
+    this.alert = true;
+     this.restoService.putRestro(this.cid,this.updateRestro.value).subscribe(data => console.log(data));
+     this.updateRestro.reset({});
+  }
+  
 }
