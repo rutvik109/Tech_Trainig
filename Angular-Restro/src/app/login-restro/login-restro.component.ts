@@ -19,8 +19,19 @@ loginResto = this.fb.group({
 
 OnLogin(){
   this.restoService.loginUser().subscribe((data) => {
-   console.log(data);
+   const user = data.find((u : any) => {
+    return u.email == this.loginResto.value.email && u.password == this.loginResto.value.password;
+   })
+
+   if(user){
+    this.loginResto.reset({});
+    this.router.navigate(['']);
+   }
+   else{
+    alert("user not found");
+   }
   });
+
 }
 
 
