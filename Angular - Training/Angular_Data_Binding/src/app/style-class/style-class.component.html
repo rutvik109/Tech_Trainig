@@ -1,0 +1,41 @@
+<div class="box" [class.myClass] = "enabled"></div><br>
+<div class="box" [ngClass] = "myClass"></div><br>
+<div class="box" [style.border] = "myBorder"></div><br>
+<div class="box" [ngStyle] = "myStyle"></div><br>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>Event Binding</p>
+
+<button type="button" (click) = "myFunction()">Button</button>
+
+<br>
+<br>
+<br>
+
+<input type="text" (blur) = "OnBlure()">
+
+
+<br>
+<br>
+<br>
+
+<button (click) = "OnClick($event)" value = "watch">Click</button>
+<p>{{message}}</p>
+
+<br><br>
+
+<input type="text" name="name" #inputName>
+<button (click)="onReference(inputName)">get refernce</button>
+
+
+<br><br>
+
+<input type="text"  value = "anuj" [(ngModel)] = "twoway">
+
+{{twoway}}
