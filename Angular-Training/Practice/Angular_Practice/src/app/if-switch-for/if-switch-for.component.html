@@ -1,0 +1,35 @@
+<button (click)="OnChange()">button</button>
+
+
+
+<p *ngIf="indicator;then ifBlock else elseBlock"></p>
+
+<ng-template #ifBlock>
+    <div>if block</div>
+</ng-template>
+<ng-template #elseBlock>
+    <div>else block</div>
+</ng-template>
+
+
+<br><br><br>
+
+<select (click) = "OnSwitch($event)">
+    <option value="laptop">Laptop</option>
+    <option value="mobile">Mobile</option>
+    <option value="tv">TV</option>
+</select>
+<br>
+<br>
+
+<div [ngSwitch]="swichValue">
+    <p *ngSwitchCase="'laptop'">laptop</p>
+    <p *ngSwitchCase="'tv'">tv</p>
+    <p *ngSwitchCase="'mobile'">mobile</p>
+</div>
+
+
+<ul *ngFor="let value of users; index as i; last as l; first as f; even as e;odd as o">
+<li>{{value["name"] + " " + i +" "+ l+" "+ f+" "+ e+ " "+o}}</li>
+</ul>
+
