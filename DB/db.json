@@ -26,6 +26,20 @@
       "password": "1234",
       "confirm_password": "1234",
       "id": 1
+    },
+    {
+      "name": "raj",
+      "email": "raj@test.com",
+      "password": "1234",
+      "confirm_password": "1234",
+      "id": 2
+    },
+    {
+      "name": "ramesh",
+      "email": "ramesh@test.com",
+      "password": "1098",
+      "confirm_password": "1908",
+      "id": 3
     }
   ]
 }
