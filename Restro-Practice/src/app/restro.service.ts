@@ -28,4 +28,16 @@ export class RestroService {
   getUser(){
     return this.http.get<any>(this.uurl);
   }
+
+  deleteRestro(id : any){
+    return this.http.delete<any>(`${this.url}/${id}`)
+  }
+
+  getIdRestro(id : any){
+    return this.http.get<any>(`${this.url}/${id}`)
+  }
+
+  putRestro(id:any,data:any){
+   return this.http.put<any>(`${this.url}/${id}`,data)
+  }
 }

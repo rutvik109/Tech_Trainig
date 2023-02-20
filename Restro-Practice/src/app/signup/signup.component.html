@@ -12,12 +12,14 @@
   ></button>
 </div>
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-  {{ loginForm.value | json }}
+<form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+  {{ signUpForm.value | json }}
+ 
   <div class="mb-3">
     <label class="form-label">Email</label>
-    <input type="email" formControlName="email" class="form-control" />
+    <input type="email" formControlName="email" class="form-control"/>
   </div>
+
   <div class="mb-3">
     <label class="form-label">Password</label>
     <input type="password" formControlName="password" class="form-control" />

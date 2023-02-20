@@ -12,16 +12,17 @@ export class SignupComponent {
 
   constructor(private restoService: RestroService) {}
 
-  loginForm = new FormGroup({
+  signUpForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
     cpassword: new FormControl(''),
   });
 
-  login() {
-    this.restoService.postUser(this.loginForm.value).subscribe((data) => {
+  signUp() {
+    this.restoService.postUser(this.signUpForm.value).subscribe((data) => {
       this.alert = true;
-      this.loginForm.reset({});
+      this.signUpForm.reset({});
     });
+    console.log(this.signUpForm);
   }
 }

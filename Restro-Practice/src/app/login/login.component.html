@@ -12,14 +12,14 @@
   ></button>
 </div>
 
-<form #signForm="ngForm" (ngSubmit)="OnSubmit()">
-  {{ signForm.value | json }}
+<form #loginForm="ngForm" (ngSubmit)="OnSubmit()">
+  {{ loginForm.value | json }}
   <div class="mb-3">
     <label class="form-label">Email</label>
     <input
       type="email"
       name="email"
-      class="form-control"
+      class="form-control email"
       [(ngModel)]="user.email"
     />
   </div>
