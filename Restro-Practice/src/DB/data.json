@@ -1,0 +1,36 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "KFC",
+      "address": "Mumbai",
+      "email": "KFC@test.com"
+    },
+    {
+      "id": 2,
+      "name": "MC D",
+      "address": "Delhi",
+      "email": "mcd@test.com"
+    },
+    {
+      "name": "Honest",
+      "address": "Punjab",
+      "email": "honest@test.com",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "mcd@test.com",
+      "password": "1234",
+      "cpassword": "1234",
+      "id": 1
+    },
+    {
+      "email": "honest@test.com",
+      "password": "1234",
+      "cpassword": "1234",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<div  *ngIf="alert"   class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>User Doesn't exit</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<form #signForm = "ngForm" (ngSubmit)="OnSubmit()">
+    {{signForm.value | json}}
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" name="email"  class="form-control" [(ngModel)] = "user.email">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" [(ngModel)] = "user.password">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
