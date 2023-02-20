@@ -1,27 +1,31 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Signup } from '../signup';
 import { RestroService } from '../restro.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-signup',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  constructor(private restroService: RestroService, private router: Router) {}
+
+  user = new Signup('', '');
+
   alert = false;
 
-  constructor(private restoService: RestroService) {}
-
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-    cpassword: new FormControl(''),
-  });
-
-  login() {
-    this.restoService.postUser(this.loginForm.value).subscribe((data) => {
-      this.alert = true;
-      this.loginForm.reset({});
+  OnSubmit() {
+    this.restroService.getUser().subscribe((data) => {
+      const euser = data.find((u: any) => {
+        return this.user.email === u.email && this.user.password === u.password;
+      });
+      if (euser) {
+        this.router.navigate(['list']);
+      } else {
+        this.alert = true;
+        this.user = new Signup('', '');
+      }
     });
   }
 }
