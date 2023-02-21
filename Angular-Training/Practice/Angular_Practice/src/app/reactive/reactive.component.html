@@ -1,0 +1,17 @@
+<form [formGroup] = "signUpForm">
+  {{signUpForm.value | json}}
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" formControlName = "email" [class.is-invalid] = "this.signUpForm.controls['email'].invalid && this.signUpForm.controls['email'].touched" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" formControlName = "password" class="form-control" [class.is-invalid] = "this.password.invalid && this.password.touched"/>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Confirm Password</label>
+    <input type="password" formControlName = "cpassword" class="form-control" />
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>

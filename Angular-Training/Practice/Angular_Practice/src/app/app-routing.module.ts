@@ -6,16 +6,7 @@ import { NavbarComponent } from './Flow/navbar/navbar.component';
 import { PageNotFoundComponent } from './Flow/page-not-found/page-not-found.component';
 import { SignupComponent } from './Flow/signup/signup.component';
 
-const routes: Routes = [
-  {path: '' , redirectTo:"login",pathMatch:"full"},
-  {path: 'signup' , component:SignupComponent},
-  {path: 'login' , component:LoginComponent,
-  children:[
-    {path:'list', component:ListComponent}
-  ]
-},
-{path:"**",component:PageNotFoundComponent}
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
