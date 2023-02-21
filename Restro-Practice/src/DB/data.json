@@ -1,0 +1,42 @@
+{
+  "restaurants": [
+    {
+      "name": "mcdonals",
+      "email": "mcd@test.com",
+      "address": "Punjab",
+      "id": 1
+    },
+    {
+      "name": "Royal",
+      "email": "royal@test.com",
+      "address": "Ahmedabad",
+      "id": 2
+    },
+    {
+      "name": "KFC",
+      "email": "kfc@test.com",
+      "address": "Mumbai",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "mcd@test.com",
+      "password": "1234",
+      "cpassword": "1234",
+      "id": 1
+    },
+    {
+      "email": "honest@test.com",
+      "password": "1234",
+      "cpassword": "1234",
+      "id": 2
+    },
+    {
+      "email": "honest@test.com",
+      "password": "1234",
+      "cpassword": "1234",
+      "id": 3
+    }
+  ]
+}

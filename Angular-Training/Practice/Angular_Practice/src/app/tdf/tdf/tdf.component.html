@@ -1,0 +1,22 @@
+<form #Form = "ngForm" (ngSubmit)="OnSubmit()">
+    {{Form.value | json}}
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input [class.is-invalid] = "email.invalid && email.touched" type="email" #email = "ngModel" class="form-control email" name="email" [(ngModel)] = "user.email" required email/>
+    <div [class.d-none] = "email.valid || email.untouched">
+      <small class="text-danger"  *ngIf="email.errors?.['required']">email is required</small>
+      <small class="text-danger" *ngIf="email.errors?.['email']">email formate is wrong</small>
+    </div> 
+  </div>
+  
+
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password"  class="form-control" #password = "ngModel" minlength="5" name="password" [(ngModel)] = "user.password" required/>
+    <div [class.d-none] = "password.valid || password.untouched">
+      <small class="text-danger"  *ngIf="password.errors?.['required']">password is required</small>
+      <small class="text-danger" *ngIf="password.errors?.['minlength']">password must be 5 character long</small>
+    </div> 
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="Form.invalid">Login</button>
+</form>
