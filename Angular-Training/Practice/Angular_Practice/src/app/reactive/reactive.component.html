@@ -33,11 +33,15 @@
       <small *ngIf="this.signUpForm.controls['password'].errors?.['minlength']"
         >minlength
       </small>
+      <small *ngIf="this.signUpForm.controls['password'].errors?.['forbiddenName']"
+        >forbidden
+      </small>
     </div>
   </div>
   <div class="mb-3">
     <label class="form-label">Confirm Password</label>
-    <input type="password" formControlName="cpassword" class="form-control" />
+    <input type="password" formControlName="cpassword" class="form-control" [class.is-invalid] = "signUpForm.errors?.['NotSame']"/>
+    <small *ngIf="signUpForm.errors?.['NotSame']">not same</small>
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>

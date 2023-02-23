@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder , Validators} from '@angular/forms';
+import { NameValidator } from '../shared/validator.name'
+import { PasswordValidator } from '../shared/validator.password';
 
 @Component({
   selector: 'app-reactive',
@@ -16,8 +18,8 @@ constructor(private fb : FormBuilder){}
 
 signUpForm = this.fb.group({
   email : ['',Validators.required],
-  password: ['',[Validators.required,Validators.minLength(5)]],
+  password: ['',[Validators.required,Validators.minLength(5),NameValidator]],
   cpassword: ['']
-})
+},{validator : PasswordValidator})
 
 }

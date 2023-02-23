@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EditComponent } from './edit/edit.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PowPipe } from './pipes/pow.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     SignupComponent,
     EditComponent,
-    NavbarComponent
+    NavbarComponent,
+    PowPipe
   ],
   imports: [
     BrowserModule,
