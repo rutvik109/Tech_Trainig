@@ -6,7 +6,13 @@
       "id": 1
     }
   ],
-  "login": [],
+  "login": [
+    {
+      "email": "honest@test.com",
+      "password": "1234",
+      "id": 1
+    }
+  ],
   "events": [],
   "special": []
 }
