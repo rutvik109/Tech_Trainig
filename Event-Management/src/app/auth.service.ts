@@ -8,9 +8,9 @@ export class AuthService {
 
   constructor(private http : HttpClient) { }
    
- _registerUrl = "http://localhost:3000/register";
+ _registerUrl = "http://localhost:3000/api/register";
 
- _loginUrl = "http://localhost:3000/login";
+ _loginUrl = "http://localhost:3000/api/login";
 
   registerUser(data : any){
       return this.http.post<any>(this._registerUrl,data);
@@ -19,4 +19,12 @@ export class AuthService {
   loginUser(data : any){
     return this.http.post<any>(this._loginUrl,data);
 }
+
+  isLogged(){
+    return localStorage.getItem("token");
+  }
+
+  getToken(){
+    return localStorage.getItem("token");
+  }
 }
