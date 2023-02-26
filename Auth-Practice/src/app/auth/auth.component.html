@@ -1,0 +1,47 @@
+<div *ngIf="errMsg" class="col-md-5 mx-auto mt-3">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error:</strong> {{ errMsg }}
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 mx-auto mt-5">
+    <form [formGroup]="authForm" (ngSubmit)="OnSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          formControlName="email"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          formControlName="password"
+          class="form-control"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">
+        {{ loginMode ? "Login" : "Create Account" }}
+      </button>
+    </form>
+    <div>
+      <p>
+        {{ loginMode ? "Don't have account?" : "Already have account?" }}
+        <a href="#" (click)="onModeSwitch()">{{
+          loginMode ? "Create one" : "Log In"
+        }}</a>
+      </p>
+    </div>
+  </div>
+</div>
