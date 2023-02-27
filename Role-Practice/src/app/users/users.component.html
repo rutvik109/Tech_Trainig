@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">Role</th>
+
+      <th scope="col" *ngIf="isadmin">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of userList">
+      <td>{{ item["email"] }}</td>
+      <td>{{ item["password"] }}</td>
+      <td>{{ item["role"] }}</td>
+
+      <td *ngIf="isadmin">
+        <a (click)="Update(item['id'])" style="cursor: pointer">
+          <i class="fa fa-edit" style="font-size: 25px; color: blue"></i
+        ></a>
+        <a style="cursor: pointer" (click)="Delete(item['id'])">
+          <i
+            class="fa fa-trash-o"
+            style="font-size: 30px; color: red; margin-right: 10px"
+          ></i
+        ></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
