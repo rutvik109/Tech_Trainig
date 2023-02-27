@@ -11,6 +11,20 @@ export class UsersComponent {
   constructor(private authService: AuthService, private router: Router) {}
   userList: any;
 
+  isadmin = false;
+
+  role:any;
+
+  ngDoCheck() {
+    this.role = this.authService.getRole();
+    if(this.role == "admin"){
+      this.isadmin = true;
+    }
+    else{
+      this.isadmin = false;
+    }
+  }
+
   user: any = [];
 
   ngOnInit() {

@@ -5,7 +5,7 @@
       <th scope="col">Password</th>
       <th scope="col">Role</th>
 
-      <th scope="col">Operations</th>
+      <th scope="col" *ngIf="isadmin">Operations</th>
     </tr>
   </thead>
   <tbody>
@@ -14,8 +14,8 @@
       <td>{{ item["password"] }}</td>
       <td>{{ item["role"] }}</td>
 
-      <td>
-        <a (click)="Update(item['id'])" style="cursor: pointer;">
+      <td *ngIf="isadmin">
+        <a (click)="Update(item['id'])" style="cursor: pointer">
           <i class="fa fa-edit" style="font-size: 25px; color: blue"></i
         ></a>
         <a style="cursor: pointer" (click)="Delete(item['id'])">
