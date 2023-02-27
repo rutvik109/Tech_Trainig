@@ -65,6 +65,7 @@ export class AuthComponent {
           sessionStorage.setItem('user', this.authForm.value.username);
           sessionStorage.setItem('role', this.authForm.value.role);
           this.authForm.reset({});
+          this.errMsg = "User Added Successfully!"
           this.loginMode = !this.loginMode;
         },
         (error) => {

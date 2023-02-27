@@ -13,6 +13,13 @@
       "username": "rutvik",
       "role": "user",
       "id": 2
+    },
+    {
+      "email": "a@a.com",
+      "password": "1234",
+      "username": "harsh",
+      "role": "user",
+      "id": 3
     }
   ]
 }
