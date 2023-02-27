@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "email": "admin@test.com",
+      "password": "1234",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "email": "a@a.com",
+      "password": "1234",
+      "role": "user",
+      "id": 2
+    }
+  ],
+  "employees": [
+    {
+      "name": "Rutvik",
+      "age": 26,
+      "gender": "male",
+      "id": 1
+    },
+    {
+      "name": "Harsh",
+      "age": 22,
+      "gender": "male",
+      "id": 2
+    }
+  ]
+}
