@@ -8,11 +8,11 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.autoSignIn();
+  }
 
   userData = new BehaviorSubject<User | null>(null);
-
-  user:any;
 
   register_url =
     'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBY6t6CgaKdeWUi1GsuEutBOcRVTfbDSLs';
@@ -20,12 +20,9 @@ export class AuthService {
   login_url =
     'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBY6t6CgaKdeWUi1GsuEutBOcRVTfbDSLs';
 
-
-
-  ngOnInit(){
-   
-      this.user = sessionStorage.getItem('user');
-   
+  autoSignIn() {
+    const user:any = sessionStorage.getItem('user');
+    console.log(JSON.parse(user));
   }
 
   registerUser(email: any, password: any) {
