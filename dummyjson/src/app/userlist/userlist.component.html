@@ -1,0 +1,28 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">firstName</th>
+        <th scope="col">lastName</th>
+        <th scope="col">maidenName</th>
+        <th scope="col">age</th>
+        <th scope="col">email</th>
+        <th scope="col">username</th>
+        <th scope="col">password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userList">
+        <td>{{ item["id"] }}</td>
+        <td>{{ item["firstName"] }}</td>
+        <td>{{ item["lastName"] }}</td>
+        <td>{{ item["maidenName"] }}</td>
+        <td>{{ item["age"] }}</td>
+        <td>{{ item["email"] }}</td>
+        <td>{{ item["username"] }}</td>
+        <td>{{ item["password"] }}</td>
+    
+      </tr>
+    </tbody>
+  </table>
+  
