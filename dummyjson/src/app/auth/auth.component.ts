@@ -33,7 +33,7 @@ export class AuthComponent {
         sessionStorage.setItem('token', data.token);
         sessionStorage.setItem('id', JSON.stringify(data.id));
         this.authForm.reset({});
-        this.router.navigate(['/userlist']);
+        this.router.navigate(['/profile']);
       },
       (error) => {
         this.errMsg = error.error.message;
