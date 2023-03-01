@@ -7,21 +7,12 @@ import { ProfileService } from '../service/profile.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent {
-  constructor(private profileService: ProfileService) {}
-  user: any;
-  image = '';
-
-  userArray: any[] = [];
-
-  ngOnInit() {
+  image: any;
+  userData: any;
+  constructor(private profileService: ProfileService) {
     this.profileService.getUser().subscribe((data) => {
-      sessionStorage.setItem('user', JSON.stringify(data));
-      // this.image = this.user[0]['image'];
-      this.user = sessionStorage.getItem('user');
-      this.userArray.push(JSON.parse(this.user));
-      console.log("Array",this.userArray);  
+      this.userData = data;
+      this.image = this.userData.image;
     });
   }
-
-  
 }

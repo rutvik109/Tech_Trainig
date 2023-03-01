@@ -37,6 +37,12 @@ export class AuthService {
       : null;
   }
 
+  getId() {
+    return sessionStorage.getItem('id')
+      ? sessionStorage.getItem('id')
+      : null;
+  }
+
   authUser(
     id: any,
     username: any,

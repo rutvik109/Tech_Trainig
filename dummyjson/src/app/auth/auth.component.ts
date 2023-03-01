@@ -31,6 +31,7 @@ export class AuthComponent {
       (data) => {
         console.log(data);
         sessionStorage.setItem('token', data.token);
+        sessionStorage.setItem('id', JSON.stringify(data.id));
         this.authForm.reset({});
         this.router.navigate(['/userlist']);
       },
