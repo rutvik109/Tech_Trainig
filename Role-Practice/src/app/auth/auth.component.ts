@@ -25,6 +25,7 @@ export class AuthComponent {
     this.authForm = this.fb.group({
       email: [''],
       password: [''],
+      role: ['user']
     });
   }
   loginMode: boolean = true;
