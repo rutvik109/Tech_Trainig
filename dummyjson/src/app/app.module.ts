@@ -9,9 +9,10 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { UserlistComponent } from './userlist/userlist.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, UserlistComponent, NavbarComponent],
+  declarations: [AppComponent, AuthComponent, UserlistComponent, NavbarComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
