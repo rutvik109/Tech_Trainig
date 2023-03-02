@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { userData } from '../models/userData.interface';
 import { UsersService } from '../service/users.service';
@@ -14,16 +14,14 @@ export class SearchComponent {
     private userService: UsersService
   ) {}
 
-  searchResult : userData[] = []
+  searchResult: userData[] = [];
 
   ngOnInit() {
-    let fname = this.route.snapshot.paramMap.get('query');
-    console.log(fname);
-    this.userService.searchUser(fname).subscribe((data) => {
-      this.searchResult = data;
-      console.log(this.searchResult);
+    this.route.params.subscribe((params) => {
+      this.userService.searchUser(params['query']).subscribe((data) => {
+        this.searchResult = data;
+        console.log(this.searchResult);
+      });
     });
   }
-
-
 }

@@ -23,6 +23,8 @@ export class NavbarComponent {
 
   searchForm: any;
 
+  searchQuery: string = '';
+
   ngOnInit() {
     this.searchForm = this.fb.group({
       fname: [''],
@@ -50,7 +52,10 @@ export class NavbarComponent {
   }
 
   OnSearch() {
-    this.router.navigate([`search/${this.searchForm.value.fname}`])
-    this.userService.searchQuery.next(this.searchForm.value.fname);
+    this.router.navigate([`search/${this.searchForm.value.fname}`]);
+  }
+
+  onClose() {
+    this.router.navigate(['userlist']);
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { userData } from '../models/userData.interface';
 import { UsersService } from '../service/users.service';
 
 @Component({
@@ -17,5 +18,9 @@ export class UserlistComponent {
       console.log("data",data)
       console.log(this.userList);
     });
+  }
+
+  tap(data:userData){
+      console.log(data);
   }
 }

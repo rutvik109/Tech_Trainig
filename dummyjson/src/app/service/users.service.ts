@@ -20,4 +20,6 @@ export class UsersService {
   searchUser(fname:string | null){
     return this.http.get<{users: userData[]}>(`${this.user_url}/search?q=${fname}`).pipe(map((res) => res.users))
   }
+
+
 }

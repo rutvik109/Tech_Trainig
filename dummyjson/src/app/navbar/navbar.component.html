@@ -17,14 +17,23 @@
         <li class="nav-item">
           <a class="nav-link" *ngIf="isAdmin" routerLink="/userlist">users</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link" *ngIf = "fname">Welcome, {{fname}}</a>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="fname">Welcome, {{ fname }}</a>
         </li>
       </ul>
-      <ul class="navbar-nav">
-        <form class="d-flex" [formGroup] = "searchForm" (ngSubmit) = "OnSearch()">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="fname">
-          <button class="btn btn-light btn-outline-success" type="submit">Search</button>
+      <ul class="navbar-nav" >
+        <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="OnSearch()" *ngIf="isAdmin">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            formControlName="fname"
+            (search)="onClose()"
+          />
+          <button class="btn btn-light btn-outline-success" type="submit">
+            Search
+          </button>
         </form>
         <li class="nav-item">
           <a class="nav-link" routerLink="/profile">Profile</a>
