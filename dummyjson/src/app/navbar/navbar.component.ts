@@ -9,12 +9,12 @@ import { AuthService } from '../service/auth.service';
 })
 export class NavbarComponent {
   constructor(private router: Router, private authService: AuthService) {
-    this.navid = this.authService.getId();
-    console.log(this.navid);
+    
   }
   isNavbar = false;
   navid: any;
   isAdmin = false;
+  fname: string | null = null;
 
   ngDoCheck() {
     if (this.router.url == '/auth') {
@@ -22,11 +22,17 @@ export class NavbarComponent {
     } else {
       this.isNavbar = true;
     }
-
-    if (this.navid == "1") {
-      this.isAdmin = true;
+    this.navid = this.authService.getId();
+    if (this.navid == '1') {
+      this.isAdmin = true;  
     } else {
       this.isAdmin = false;
+    }
+
+    if (this.authService.getFname()) {
+      this.fname = this.authService.getFname();
+    } else {
+      this.fname = null;
     }
   }
 }

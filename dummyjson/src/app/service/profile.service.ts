@@ -10,7 +10,9 @@ export class ProfileService {
   constructor(private authService: AuthService, private http: HttpClient) {}
 
   single_url = 'https://dummyjson.com/auth/users/';
-  userid: any;
+
+  
+  // userid: any;
 
   // getUser() {
   //   return this.authService.user.pipe(

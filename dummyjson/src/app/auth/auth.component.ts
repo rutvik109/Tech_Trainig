@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
@@ -16,7 +16,7 @@ export class AuthComponent {
   ) {
     sessionStorage.clear();
   }
-  errMsg: any;
+  errMsg: string = '';
   authForm: any;
 
   ngOnInit() {
@@ -32,6 +32,7 @@ export class AuthComponent {
         console.log(data);
         sessionStorage.setItem('token', data.token);
         sessionStorage.setItem('id', JSON.stringify(data.id));
+        sessionStorage.setItem('fname', data.firstName);
         this.authForm.reset({});
         this.router.navigate(['/profile']);
       },

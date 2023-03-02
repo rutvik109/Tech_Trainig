@@ -9,11 +9,12 @@ import { UsersService } from '../service/users.service';
 export class UserlistComponent {
   constructor(private usersService: UsersService) {}
 
-  userList: any[] = [];
+  userList = [];
 
   ngOnInit() {
     this.usersService.getAllUsers().subscribe((data) => {
       this.userList = data['users'];
+      console.log("data",data)
       console.log(this.userList);
     });
   }

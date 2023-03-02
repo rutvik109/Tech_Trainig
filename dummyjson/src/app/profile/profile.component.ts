@@ -7,7 +7,7 @@ import { ProfileService } from '../service/profile.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent {
-  image: any;
+  image: string = '';
   userData: any;
   constructor(private profileService: ProfileService) {
     this.profileService.getUser().subscribe((data) => {

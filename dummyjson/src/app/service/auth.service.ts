@@ -43,15 +43,21 @@ export class AuthService {
       : null;
   }
 
+  getFname(){
+    return sessionStorage.getItem('fname')
+    ? sessionStorage.getItem('fname')
+    : null;
+  }
+
   authUser(
-    id: any,
-    username: any,
-    email: any,
-    firstName: any,
-    lastName: any,
-    gender: any,
-    image: any,
-    token: any
+    id: number,
+    username: string,
+    email: string,
+    firstName: string,
+    lastName: string,
+    gender: string,
+    image: string,
+    token: string
   ) {
     const value = new User(
       id,

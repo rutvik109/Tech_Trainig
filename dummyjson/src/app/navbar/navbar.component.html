@@ -15,13 +15,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" *ngIf = "isAdmin" routerLink="/userlist">users</a>
+          <a class="nav-link" *ngIf="isAdmin" routerLink="/userlist">users</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link" routerLink="/profile">Profile</a>
+          <a class="nav-link" *ngIf = "fname">Welcome, {{fname}}</a>
         </li>
       </ul>
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="auth">Logout</a>
         </li>
