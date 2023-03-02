@@ -1,0 +1,35 @@
+<div
+  class="mx-auto my-5 col-10 col-md-8 col-lg-6 shadow-lg p-3 mb-5 bg-white rounded"
+>
+  <div class="card">
+    <img
+      class="card-img-top"
+      src="{{ userData?.image }}"
+      alt="Card image cap"
+      style="height: 350px;"
+    />
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center">
+        {{ userData?.firstName + " " + userData?.lastName }}
+      </h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Phone : {{ userData?.phone }}</li>
+      <li class="list-group-item">Email : {{ userData?.email }}</li>
+      <li class="list-group-item">Gender : {{ userData?.gender }}</li>
+      <li class="list-group-item">Age : {{ userData?.age }}</li>
+      <li class="list-group-item">
+        Address :
+        {{
+          userData?.address.address +
+            "," +
+            userData?.address.city +
+            "," +
+            userData?.address.postalCode +
+            "," +
+            userData?.address.state
+        }}
+      </li>
+    </ul>
+  </div>
+</div>

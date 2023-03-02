@@ -6,12 +6,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
-import { EmployeesComponent } from './employees/employees.component';
 import { AuthInterceptor } from './auth.interceptor';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { UserlistComponent } from './userlist/userlist.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, EmployeesComponent, AddEmployeeComponent],
+  declarations: [AppComponent, AuthComponent, UserlistComponent, NavbarComponent, ProfileComponent, SearchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +21,11 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
     HttpClientModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
