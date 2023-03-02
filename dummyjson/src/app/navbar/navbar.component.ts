@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { FormBuilder } from '@angular/forms';
+import { UsersService } from '../service/users.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +10,24 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor(private router: Router, private authService: AuthService) {
-    
-  }
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private fb: FormBuilder,
+    private userService: UsersService
+  ) {}
   isNavbar = false;
-  navid: any;
+  navid: string | null = null;
   isAdmin = false;
   fname: string | null = null;
+
+  searchForm: any;
+
+  ngOnInit() {
+    this.searchForm = this.fb.group({
+      fname: [''],
+    });
+  }
 
   ngDoCheck() {
     if (this.router.url == '/auth') {
@@ -24,7 +37,7 @@ export class NavbarComponent {
     }
     this.navid = this.authService.getId();
     if (this.navid == '1') {
-      this.isAdmin = true;  
+      this.isAdmin = true;
     } else {
       this.isAdmin = false;
     }
@@ -34,5 +47,10 @@ export class NavbarComponent {
     } else {
       this.fname = null;
     }
+  }
+
+  OnSearch() {
+    this.router.navigate([`search/${this.searchForm.value.fname}`])
+    this.userService.searchQuery.next(this.searchForm.value.fname);
   }
 }

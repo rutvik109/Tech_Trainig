@@ -4,6 +4,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AdminGuard } from './Guards/admin.guard';
 import { AuthGuard } from './Guards/auth.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { SearchComponent } from './search/search.component';
 import { UserlistComponent } from './userlist/userlist.component';
 
 const routes: Routes = [
@@ -15,6 +16,11 @@ const routes: Routes = [
     canActivate: [AuthGuard, AdminGuard],
   },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  {
+    path: 'search/:query',
+    component: SearchComponent,
+    canActivate: [AuthGuard, AdminGuard],
+  },
 ];
 
 @NgModule({

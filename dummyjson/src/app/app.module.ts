@@ -10,9 +10,10 @@ import { AuthInterceptor } from './auth.interceptor';
 import { UserlistComponent } from './userlist/userlist.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, UserlistComponent, NavbarComponent, ProfileComponent],
+  declarations: [AppComponent, AuthComponent, UserlistComponent, NavbarComponent, ProfileComponent, SearchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
