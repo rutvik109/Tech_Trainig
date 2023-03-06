@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   {
-    path: 'search/:query',
+    path: 'search',
     component: SearchComponent,
     canActivate: [AuthGuard, AdminGuard],
   },

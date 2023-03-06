@@ -15,12 +15,11 @@ export class UserlistComponent {
   ngOnInit() {
     this.usersService.getAllUsers().subscribe((data) => {
       this.userList = data['users'];
-      console.log("data",data)
-      console.log(this.userList);
+      console.log("User List ",this.userList);
     });
   }
 
-  tap(data:userData){
-      console.log(data);
+  tap(data: userData) {
+    console.log(data);
   }
 }

@@ -17,11 +17,9 @@ export class SearchComponent {
   searchResult: userData[] = [];
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.userService.searchUser(params['query']).subscribe((data) => {
-        this.searchResult = data;
-        console.log(this.searchResult);
-      });
+    this.userService.searchQuery.subscribe((data: any) => {
+      console.log('subject data', data);
+      this.searchResult = data;
     });
   }
 }

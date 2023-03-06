@@ -38,7 +38,7 @@ export class NavbarComponent {
       this.isNavbar = true;
     }
     this.navid = this.authService.getId();
-    if (this.navid == '1') {
+    if (this.navid == '1' || this.navid == '2') {
       this.isAdmin = true;
     } else {
       this.isAdmin = false;
@@ -52,10 +52,16 @@ export class NavbarComponent {
   }
 
   OnSearch() {
-    this.router.navigate([`search/${this.searchForm.value.fname}`]);
+    this.userService
+      .searchUser(this.searchForm.value.fname)
+      .subscribe((data) => {
+        this.userService.searchQuery.next(data);
+      });
+    this.router.navigate(['search']);
   }
 
   onClose() {
     this.router.navigate(['userlist']);
+    this.userService.searchQuery.next([]);
   }
 }

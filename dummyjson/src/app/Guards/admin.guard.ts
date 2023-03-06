@@ -26,7 +26,7 @@ export class AdminGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.id == '1') {
+    if (this.id == '1' ||  this.id == '2') {
       return true;
     } else {
       this.router.navigate(['/profile']);
