@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 my-3">
+      <p class="border rounded bg-light py-1 text-center">Ex - 1</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data1">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.gender }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 my-3">
+      <p class="border rounded bg-light py-1 text-center">Ex - 2</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data2">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.gender }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 my-3">
+      <p class="border rounded bg-light py-1 text-center">Ex - 3</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data3">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.gender }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

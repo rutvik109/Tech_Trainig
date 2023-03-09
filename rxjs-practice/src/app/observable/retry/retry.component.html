@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-3 my-3 mx-auto">
+    <table class="table table-bordered" *ngIf="person != null">
+      <tr>
+        <th>id</th>
+        <td>{{ person.id }}</td>
+      </tr>
+      <tr>
+        <th>name</th>
+        <td>{{ person.name }}</td>
+      </tr>
+      <tr>
+        <th>email</th>
+        <td>{{ person.email }}</td>
+      </tr>
+      <tr>
+        <th>M.NO</th>
+        <td>{{ person.mno }}</td>
+      </tr>
+    </table>
+
+    <button class="btn btn-primary" type="button" (click)="fetchData()">
+      <span
+        class="spinner-border spinner-border-sm"
+        role="status"
+        aria-hidden="true"
+        *ngIf="spinner"
+      ></span>
+      {{ btn_status}}
+    </button>
+    <br />
+    <br />
+    <p>
+      status:
+      <strong
+        [ngClass]="{
+          'text-success': status == 'Data Fetched',
+          'text-danger': status == 'Problem Facing Data'
+        }"
+        >{{ status }}</strong
+      >&nbsp;
+      <span
+        *ngIf="fetching"
+        class="spinner-grow text-warning"
+        style="height: 20px; width: 20px"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </span>
+    </p>
+  </div>
+</div>
