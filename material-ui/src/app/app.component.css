@@ -1,0 +1,5 @@
+#wrapper main {
+  min-height: calc(80.50vh);
+  max-height: calc(80.50vh);
+  padding: 0;
+}
